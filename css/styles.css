@@ -713,10 +713,6 @@ h2 {
   border-radius: 2px;
 }
 
-/* Чому не Працює? */
-.link.curent:hover::after {
-  transform: none;
-}
 
 .link {
   transform: scale(1);
@@ -725,7 +721,7 @@ h2 {
 }
 
 .link:hover {
-  transform: scale(1.5);
+  transform: scale(1.1);
 }
 
 .contacts-link {
@@ -735,7 +731,7 @@ h2 {
 }
 
 .contacts-link:hover {
-  transform: scale(1.5);
+  transform: scale(1.1);
 }
 
 .site-nav.item {

@@ -460,7 +460,7 @@ header {
 }
 
 .link:hover {
-  transform: scale(1.5);
+  transform: scale(1.1);
 }
 
 .contacts-link {
@@ -470,7 +470,7 @@ header {
 }
 
 .contacts-link:hover {
-  transform: scale(1.5);
+  transform: scale(1.1);
 }
 
 .site-nav.item {
