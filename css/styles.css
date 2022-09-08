@@ -637,29 +637,42 @@ h2 {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 1;
+
+  transform:translateY(0);
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic-bezier);
+
 }
 
 .backdrop.is-hidden {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
+  transform:translateY(-100%)
 }
 
 .modal {
   position: absolute;
+  justify-content: center;
+  align-items: center;
+
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   min-width: 400px;
   min-height: 250px;
+  border-radius: 4px;
   background-color: #ffffff;
-  padding: 10px 15px;
+  padding: 20px 20px;
+
 }
 
 .btn-cross {
   display: flex;
   position: absolute;
   justify-content: center;
+
+
   align-items: center;
   top: 5px;
   right: 5px;
@@ -671,11 +684,16 @@ h2 {
   background-color: var(--primery-text-color);
   border: 1px solid var(--secondary-background-color);
   border-radius: 50%;
+
+  transform: rotate(0deg);
+  transition-duration: 650ms;
+  transition-timing-function: var(--cubic-bezier);
 }
 
 .btn-cross:hover {
   cursor: pointer;
   background-color: var(--primary-background-color);
+  transform: rotate(180deg);
 }
 
 /* Модальне вікно end*/
