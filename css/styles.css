@@ -6,6 +6,8 @@
   --primary-background-color: #f5f4fa;
   --secondary-background-color: #2f303a;
   --hero-color: #ffffff;
+
+  --cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Цвет заголовков #212121 */
@@ -238,10 +240,15 @@ header {
   margin-left: auto;
   margin-right: auto;
   display: block;
+
+  transform: scale(1);
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic-bezier);
 }
 
 .btn:hover {
-  background: #188ce8;
+  background-color: #188ce8;
+  transform: scale(1.1);
 }
 
 /* Переваги */
@@ -432,9 +439,6 @@ ul.heands.list {
 
 .socials-link {
   fill: #afb1b8;
-}
-
-.socials-link {
   width: 44px;
   height: 44px;
 
@@ -442,12 +446,18 @@ ul.heands.list {
   border-radius: 50%;
   justify-content: center;
   align-items: center;
+
+  transform: scale(1);
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic-bezier);
 }
 
 .socials-link:hover,
 .socials-link:focus {
   fill: #ffffff;
   background-color: var(--accent-color);
+
+  transform: scale(1.2);
 }
 
 /* Клієнти */
@@ -471,7 +481,6 @@ h2 {
   margin-top: 0px;
   margin-bottom: 50px;
   text-align: center;
-
 }
 
 .clients-list {
@@ -495,18 +504,22 @@ h2 {
 
   border: 1px solid #afb1b8;
   border-radius: 4px;
+
+  transform: scale(1);
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic-bezier);
 }
 
 .clients-icon {
   display: flex;
- 
 }
-
 
 .clients-link:hover,
 .clients-link:focus {
   border-color: var(--accent-color);
   fill: var(--accent-color);
+
+  transform: scale(1.2);
 }
 
 /* Футер */
@@ -600,16 +613,21 @@ h2 {
   border-radius: 50%;
   justify-content: center;
   align-items: center;
+
+  transform: scale(1);
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic-bezier);
 }
 
 .footer-link:hover,
 .footer-link:focus {
   fill: #ffffff;
   background-color: var(--accent-color);
+
+  transform: scale(1.2);
 }
 
-
-/* Модальне вікно */
+/* Модальне вікно start*/
 
 .backdrop {
   position: fixed;
@@ -619,14 +637,12 @@ h2 {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 1;
-
 }
 
 .backdrop.is-hidden {
-visibility: hidden;
-opacity: 0;
-pointer-events: none;
-
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .modal {
@@ -634,7 +650,107 @@ pointer-events: none;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  min-width: 600px;
-  min-height: 400px; 
+  min-width: 400px;
+  min-height: 250px;
   background-color: #ffffff;
+  padding: 10px 15px;
+}
+
+.btn-cross {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top: 5px;
+  right: 5px;
+  padding: 0;
+
+  width: 17px;
+  height: 17px;
+
+  background-color: var(--primery-text-color);
+  border: 1px solid var(--secondary-background-color);
+  border-radius: 50%;
+}
+
+.btn-cross:hover {
+  cursor: pointer;
+  background-color: var(--primary-background-color);
+}
+
+/* Модальне вікно end*/
+
+/* Позиціонування та переходи хедер start */
+
+.link.curent::after {
+  display: block;
+  position: absolute;
+  content: "";
+
+  width: 48px;
+  height: 4px;
+  bottom: -1px;
+  right: 0;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+
+/* Чому не Працює? */
+.link.curent:hover::after {
+  transform: none;
+}
+
+.link {
+  transform: scale(1);
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic-bezier);
+}
+
+.link:hover {
+  transform: scale(1.5);
+}
+
+.contacts-link {
+  transform: scale(1);
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic-bezier);
+}
+
+.contacts-link:hover {
+  transform: scale(1.5);
+}
+
+.site-nav.item {
+  position: relative;
+}
+
+/* Позиціонування та переходи хедер end */
+
+.project-text {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  right: 0;
+  width: 370px;
+  height: 70px;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  color: var(--hero-color);
+  background: rgba(47, 48, 58, 0.8);
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.project-items1,
+.project-items2,
+.project-items3 {
+  position: relative;
 }

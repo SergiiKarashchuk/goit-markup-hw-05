@@ -53,7 +53,8 @@
         <a class="logo" href=""><span>Web</span>Studio</a>
 
         <ul class="site-nav list">
-          <li><a href="" class="link curent">Студія</a></li>
+          <li class="site-nav item">
+            <a href="" class="link curent">Студія</a></li>
           <li><a href="./portfolio.html" class="link">Портфоліо</a></li>
           <li><a href="" class="link">Контакти</a></li>
         </ul>
@@ -81,7 +82,7 @@
       <section class="hero">
         <div class="container">
           <h1 class="hero-title">Ефективні рішення для вашого бізнесу</h1>
-          <button type="button" class="btn">Замовити послугу</button>
+          <button type="button" class="btn" data-modal-open>Замовити послугу</button>
         </div>
       
       </section>
@@ -150,30 +151,32 @@
         <div class="container">
           <h2 class="project-title">Чим займаємося</h2>
           <ul class="project list">
-            <li>
+            <li class="project-items1">
               <img
                 src="./images/img-left.jpg"
                 alt="Людина працює на десктоп комп'ютері"
                 width="370"
               />
+              <p class="project-text">Десктопні додатки</p>
 
-              <!-- <p>Десктопні додатки</p> -->
             </li>
-            <li>
+            <li class="project-items2">
               <img
                 src="./images/img-right.jpg"
                 alt="Людина працює на планшеті"
                 width="370"
               />
+              <p class="project-text">Мобільні додатки</p>
 
               <!-- <p>Мобільні додатки</p> -->
             </li>
-            <li>
+            <li class="project-items3">
               <img
                 src="./images/img-center.jpg"
                 alt="Людина працює на телефоні"
                 width="370"
               />
+              <p class="project-text">Дизайнерські рішення</p>
 
               <!-- <p>Дизайнерські рішення</p> -->
             </li>
@@ -456,12 +459,16 @@
    
 <!-- Модальне вікно -->
 
-<button data-modal-open>Открыть модальное окно</button>
+
 
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam vero harum aliquam mollitia fugit aut voluptas, molestias placeat eveniet nostrum animi dolor corporis, et impedit vitae temporibus facere cumque at!</p>
-        <button data-modal-close>Закрыть</button>
+        <p>Заповніть форму і ми з вами зв'яжемось</p>
+        <button class="btn-cross" data-modal-close>
+            <svg class="icon-cross" width="10" height="10">
+              <use href="./images/icons.svg#icon-cross"></use>
+            </svg>
+        </button>
       </div>
     </div>
     
