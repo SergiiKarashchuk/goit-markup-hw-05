@@ -60,12 +60,6 @@ header {
   display: flex;
 }
 
-.contacts-link {
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
 .contacts-item {
   display: flex;
   align-items: center;
@@ -83,7 +77,7 @@ header {
 .section-address a:hover,
 .section-address a:focus {
   color: #2196f3;
-  cursor: pointer;
+
 }
 
 .section-address ul {
@@ -139,8 +133,10 @@ header {
   padding-bottom: 32px;
   display: inline-block;
 }
-.contacts a {
+
+.contacts-link {
   display: flex;
+  margin: 0;
   color: var(--primery-text-color);
   font-weight: 500;
   font-size: 14px;
@@ -149,6 +145,17 @@ header {
   text-decoration: none;
   padding-top: 32px;
   padding-bottom: 32px;
+  fill: currentColor;
+
+  transition-property: color, transform;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic-bezier);
+}
+
+.contacts-link:hover,
+.contacts-link:focus {
+  color: var(--accent-color);
+  transform: scale(1.1);
 }
 
 .site-nav a:hover,
@@ -162,13 +169,6 @@ header {
 
 .contacts.list li:not(:last-child) {
   margin-right: 50px;
-}
-
-.contacts.list a:hover,
-.contacts.list a:focus {
-  fill: var(--accent-color);
-  color: var(--accent-color);
-  cursor: pointer;
 }
 
 /* header end */
@@ -292,13 +292,14 @@ header {
   overflow: hidden;
 }
 
-.item-projects:hover .overlay {
+.card-link:hover .overlay,
+.card-link:focus .overlay {
   transform: translateY(0);
 }
 
 .overlay {
   position: absolute;
-  transform: translateY(100%);
+  transform: translateY(101%);
   transition-duration: 250ms;
   transition-timing-function: var(--cubic-bezier);
   justify-content: center;
@@ -338,19 +339,42 @@ header {
 
 .section-address .item {
   color: #ffffff;
-  font-style: normal;
-  font-size: 14px;
-  line-height: 1.7;
-  letter-spacing: 0.03em;
 }
 
 .section-address .mail,
 .section-address .tel {
   color: rgba(255, 255, 255, 0.6);
+}
+
+.section-address .item,
+.section-address .mail,
+.section-address .tel {
   font-style: normal;
   font-size: 14px;
   line-height: 1.7;
   letter-spacing: 0.03em;
+
+  transition-property: color, transform;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic-bezier);
+}
+
+.section-address .item:hover,
+.section-address .item:focus {
+  color: var(--accent-color);
+  transform: scale(1.2);
+}
+
+.section-address .tel:hover,
+.section-address .tel:focus {
+  color: var(--accent-color);
+  transform: scale(1.2);
+}
+
+.section-address .mail:hover,
+.section-address .mail:focus {
+  color: var(--accent-color);
+  transform: scale(1.2);
 }
 
 .section-address ul {
@@ -420,16 +444,14 @@ header {
   justify-content: center;
   align-items: center;
 
-  transform: scale(1);
+  transition-property: background-color, transform;
   transition-duration: 250ms;
   transition-timing-function: var(--cubic-bezier);
 }
 
 .footer-link:hover,
 .footer-link:focus {
-  fill: #ffffff;
   background-color: var(--accent-color);
-
   transform: scale(1.2);
 }
 
@@ -455,6 +477,7 @@ header {
 
 .link {
   transform: scale(1);
+  transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: var(--cubic-bezier);
 }
